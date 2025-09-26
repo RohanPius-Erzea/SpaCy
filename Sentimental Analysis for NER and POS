@@ -1,0 +1,58 @@
+#Crafted demo by Rohan Pius
+#Scroll down for project output
+
+import spacy
+
+#SpaCy Setup
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("Craft Project by Rohan Pius.")
+    exit()
+
+
+text = "Rohan Pius is a content writer and an AI Enthusiast learning about Natural Language Processing on Coursera Plus."
+
+doc = nlp(text)
+
+print("--- Tokenization and POS Tagging ---")
+
+for token in doc:
+ 
+    print(f"Token: {token.text}\t Part of Speech: {token.pos_}\t Dependency: {token.dep_}")
+
+print("\n--- Named Entity Recognition (NER) ---")
+
+for entity in doc.ents:
+  
+    print(f"Entity: {entity.text}\t Label: {entity.label_}")
+ 
+#Code ends here
+
+#Output
+--- Tokenization and POS Tagging --- Craft Project by Rohan Pius
+Token: Rohan	 Part of Speech: PROPN	 Dependency: compound
+Token: Pius	 Part of Speech: PROPN	 Dependency: nsubj
+Token: is	 Part of Speech: AUX	 Dependency: ROOT
+Token: a	 Part of Speech: DET	 Dependency: det
+Token: content	 Part of Speech: NOUN	 Dependency: compound
+Token: writer	 Part of Speech: NOUN	 Dependency: attr
+Token: and	 Part of Speech: CCONJ	 Dependency: cc
+Token: an	 Part of Speech: DET	 Dependency: det
+Token: AI	 Part of Speech: PROPN	 Dependency: compound
+Token: Enthusiast	 Part of Speech: PROPN	 Dependency: compound
+Token: learning	 Part of Speech: VERB	 Dependency: conj
+Token: about	 Part of Speech: ADP	 Dependency: prep
+Token: Natural	 Part of Speech: PROPN	 Dependency: compound
+Token: Language	 Part of Speech: PROPN	 Dependency: compound
+Token: Processing	 Part of Speech: NOUN	 Dependency: pobj
+Token: on	 Part of Speech: ADP	 Dependency: prep
+Token: Coursera	 Part of Speech: PROPN	 Dependency: compound
+Token: Plus	 Part of Speech: PROPN	 Dependency: pobj
+Token: .	 Part of Speech: PUNCT	 Dependency: punct
+
+--- Named Entity Recognition (NER) --- Craft Project by Rohan Pius
+Entity: Rohan Pius	 Label: PERSON
+Entity: AI Enthusiast	 Label: ORG
+Entity: Natural Language Processing on Coursera Plus	 Label: WORK_OF_ART
