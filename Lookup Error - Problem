@@ -1,0 +1,53 @@
+LookupError Traceback (most recent call last)
+
+/tmp/ipython-input-317607745.py in <cell line: 0>() 15 # crafted by Rohan: Download VADER, tokenizers, and wordnet for full functionality---> 16 nltk.data.find('sentiment/vader_lexicon.zip') 17 except nltk.downloader.DownloadError:
+
+
+1 frames
+
+LookupError:
+
+**********************************************************************
+
+Resource vader_lexicon not found.
+
+Please use the NLTK Downloader to obtain the resource:
+
+
+>>> import nltk
+
+>>> nltk.download('vader_lexicon')
+
+For more information see: https://www.nltk.org/data.html
+
+
+Attempted to load sentiment/vader_lexicon.zip
+
+
+Searched in:
+
+- '/root/nltk_data'
+
+- '/usr/nltk_data'
+
+- '/usr/share/nltk_data'
+
+- '/usr/lib/nltk_data'
+
+- '/usr/share/nltk_data'
+
+- '/usr/local/share/nltk_data'
+
+- '/usr/lib/nltk_data'
+
+- '/usr/local/lib/nltk_data'
+
+**********************************************************************
+
+During handling of the above exception, another exception occurred:
+
+AttributeError Traceback (most recent call last)
+
+/tmp/ipython-input-317607745.py in <cell line: 0>() 15 # crafted by Rohan: Download VADER, tokenizers, and wordnet for full functionality 16 nltk.data.find('sentiment/vader_lexicon.zip')---> 17 except nltk.downloader.DownloadError: 18 nltk.download('punkt') 19 nltk.download('stopwords')
+
+AttributeError: module 'nltk.downloader' has no attribute 'DownloadError' 
